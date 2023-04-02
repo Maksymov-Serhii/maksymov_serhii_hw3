@@ -1,0 +1,16 @@
+.some-component {
+  border: 2px solid brown;
+  margin: 10px 0;
+}
+ol {
+  display: inline-block;
+  border: 1px solid coral;
+}
+ol p {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  color: bisque;
+}
+li {
+  padding: 5px 10px;
+}

@@ -1,3 +1,4 @@
+import StudentList from '../StudentList';
 import './App.css';
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <div className="App">
       <h1 className='title'>CyberBionic systematics</h1>
       <h3 className='title'>Welcome</h3>
+      <StudentList />
     </div>
   );
 }
