@@ -38,7 +38,7 @@ class StudentList extends React.Component {
     return (
       <div className="some-component">
         <h2>Component for displaying a list of names</h2>
-        <ol>
+        <ol className="student-list">
           <p>Student list:</p>
           
           {students.map(student => {

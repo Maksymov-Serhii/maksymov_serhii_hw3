@@ -2,15 +2,15 @@
   border: 2px solid brown;
   margin: 10px 0;
 }
-ol {
+.student-list {
   display: inline-block;
   border: 1px solid coral;
 }
-ol p {
+.student-list p {
   margin: 0 0 10px 0;
   font-weight: bold;
   color: bisque;
 }
-li {
+.student-list li {
   padding: 5px 10px;
 }

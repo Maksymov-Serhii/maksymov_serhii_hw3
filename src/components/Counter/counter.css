@@ -2,7 +2,7 @@
   border: 2px solid brown;
   margin: 10px 0;
 }
-button {
+.count-button {
   font-weight: bold;
   font-size: 32px;
   min-width: 40px;

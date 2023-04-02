@@ -1,5 +1,6 @@
-import Counter from '../Counter';
-import StudentList from '../StudentList';
+import Counter from '../Counter/Counter';
+import DivClick from '../DivClick/DivClick';
+import StudentList from '../StudentList/StudentList';
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <h3 className='title'>Welcome</h3>
       <StudentList />
       <Counter />
+      <DivClick />
     </div>
   );
 }
