@@ -2,90 +2,67 @@ import React from "react";
 import "./twoLists.css"
 
 class TwoLists extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      reactStudents: ["Maksymov Serhii", "Isyk Volodymyr", "Ponomarenko Oleksandr", "Chayka Vitaliy", "Kot Roman"],
+      angularStudents: ["Huskova Anna", "Mazurik Diana", "Cherniavska Olga", "Rivchachenko Mykyta", "Mazur Ekaterina"],
+    };
+  }
+
   render() {
 
-    const reactStudents = [
-      {
-        id: 101,
-        firstName: "Serhii",
-        lastName: "Maksymov",
-      },
-      {
-        id: 1382956392,
-        firstName: "Volodymyr",
-        lastName: "Isyk",
-      },
-      {
-        id: 1093203,
-        firstName: "Oleksandr",
-        lastName: "Ponomarenko",
-      },
-      {
-        id: 185001,
-        firstName: "Chayka",
-        lastName: "Vitaliy",
-      },
-      {
-        id: 103305,
-        firstName: "Roman",
-        lastName: "Kot",
-      },
-    ];
-
-    const angularStudents = [
-      {
-        id: 1012,
-        firstName: "Anna",
-        lastName: "Huskova",
-      },
-      {
-        id: 13829256392,
-        firstName: "Diana",
-        lastName: "Mazurik",
-      },
-      {
-        id: 10932203,
-        firstName: "Olga",
-        lastName: "Cherniavska",
-      },
-      {
-        id: 1850201,
-        firstName: "Mykyta",
-        lastName: "Rivchachenko",
-      },
-      {
-        id: 10322305,
-        firstName: "Ekaterina",
-        lastName: "Mazur",
-      },
-    ];
     return (
       <div className="some-component">
         <h2>Component for changing list items</h2>
 
-        <ul className="student-list">
+        <div className="div-list">
           <p>React student list:</p>
+
+          <ul>    
+            
+            {this.state.reactStudents.map((student, index) => {
+              return (
+                <li key={index}>{ student }</li>
+                )
+              })}
+          </ul>
+
+          <button onClick={() => {            
+            const reactList = this.state.reactStudents;
+            const angularList = this.state.angularStudents;
+
+            if (reactList.length > 0) {
+              angularList.push(reactList[0]);
+              reactList.shift(reactList[0]);
+              this.setState({reactStudents: reactList, angularStudents: angularList})
+            }
           
-          {reactStudents.map(student => {
-            return (
-              <li key={student.id}>{ student.lastName } { student.firstName }</li>
-            )
-          })}
+          }}>Move first student to Angular group</button>
+        </div>
 
-          <button>Move first student to Angular group</button>
-        </ul>
-
-        <ul className="student-list">
+        <div className="div-list">
           <p>Angular student list:</p>
-          
-          {angularStudents.map(student => {
-            return (
-              <li key={student.id}>{ student.lastName } { student.firstName }</li>
-            )
-          })}
+          <ul>          
+            {this.state.angularStudents.map((student, index) => {
+              return (
+                <li key={index}>{ student }</li>
+              )
+            })}
+          </ul>
 
-          <button>Move first student to React group</button>
-        </ul>
+          <button onClick={() => {
+            const reactList = this.state.reactStudents;
+            const angularList = this.state.angularStudents;
+
+            if (angularList.length > 0) {
+              reactList.push(angularList[0]);
+              angularList.shift(angularList[0]);
+              this.setState({reactStudents: reactList, angularStudents: angularList})
+            }
+          }}>Move first student to React group</button>
+        </div>
 
       </div>
     )

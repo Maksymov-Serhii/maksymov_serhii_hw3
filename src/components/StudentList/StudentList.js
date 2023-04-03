@@ -25,8 +25,8 @@ class StudentList extends React.Component {
       },
       {
         id: 185001,
-        firstName: "Chayka",
-        lastName: "Vitaliy",
+        firstName: "Vitaliy",
+        lastName: "Chayka",
       },
       {
         id: 103305,
