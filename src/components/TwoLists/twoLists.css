@@ -1,0 +1,20 @@
+.some-component {
+  border: 2px solid brown;
+  margin: 10px 0;
+}
+.student-list {
+  display: inline-block;
+  border: 1px solid coral;
+}
+.student-list p {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  color: bisque;
+}
+.student-list li {
+  padding: 5px 10px;
+}
+.student-list button {
+  padding: 5px;
+  font-size: 14px;
+}
